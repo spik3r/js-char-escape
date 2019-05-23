@@ -1,4 +1,4 @@
-# js-char-escape [![Build status](https://travis-ci.org/spik3r/js-char-escape.svg?branch=master)](https://travis-ci.org/spik3r/js-char-escape) 
+# js-char-escape [![Build status](https://travis-ci.com/spik3r/js-char-escape.svg?branch=master)](https://travis-ci.com/spik3r/js-char-escape) 
 
 Given some data, _js-char-escape_ returns a stringified representation of that data. js-char-escape is a fork of [jsec](https://github.com/mathiasbynens/js-char-escape) with a few minor [additions](#exclude).
  
