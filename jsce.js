@@ -95,7 +95,8 @@ const jsce = (argument, options) => {
 		'indentLevel': 0,
 		'__inline1__': false,
 		'__inline2__': false,
-		'exclude': ''
+		'exclude': '',
+		'excludeAccented': false
 	};
 	const json = options && options.json;
 	if (json) {
@@ -237,6 +238,7 @@ const jsce = (argument, options) => {
 
 	const string = argument;
 	const ignoredCharacters = options.exclude;
+	const accentedCharacters = 'àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ';
 	// Loop over each code unit in the string and escape it
 	let index = -1;
 	const length = string.length;
@@ -244,6 +246,10 @@ const jsce = (argument, options) => {
 	while (++index < length) {
 		const character = string.charAt(index);
 		if (ignoredCharacters.includes(character)) {
+			result += character;
+			continue;
+		}
+		if (options.excludeAccented && accentedCharacters.includes(character.toLowerCase())) {
 			result += character;
 			continue;
 		}

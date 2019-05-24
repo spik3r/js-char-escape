@@ -558,6 +558,22 @@ describe('common usage', function() {
 			"käfer",
 			'Excluding a character a string'
 		);
+		// EXCLUDE ACCENTED
+		assert.equal(
+			jsce('àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ', {
+				'excludeAccented': true
+			}),
+			"àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ",
+			'Excluding all accented characters in a string'
+		);
+		assert.equal(
+			jsce('àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ¿¡„“€', {
+				'excludeAccented': true,
+				'exclude': '¿¡„“€'
+			}),
+			"àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ¿¡„“€",
+			'Excluding all accented characters in a string and a few additional symbols'
+		);
 	});
 });
 

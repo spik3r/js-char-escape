@@ -1,6 +1,6 @@
 # js-char-escape [![Build status](https://travis-ci.com/spik3r/js-char-escape.svg?branch=master)](https://travis-ci.com/spik3r/js-char-escape) 
 
-Given some data, _js-char-escape_ returns a stringified representation of that data. js-char-escape is a fork of [jsec](https://github.com/mathiasbynens/js-char-escape) with a few minor [additions](#exclude).
+Given some data, _js-char-escape_ returns a stringified representation of that data. js-char-escape is a fork of [jsesc](https://github.com/mathiasbynens/jsesc) with a few minor [exclude](#exclude) & [excludeAccented](#excludeAccented).
  
 js-char-escape is similar to `JSON.stringify()` except:
 
@@ -356,6 +356,17 @@ js-char-escape('käfer', {
   'exclude': 'ä'
 });
 // → 'käfer'
+```
+#### `excludeAccented`
+
+The `excludeAccented` option takes a boolean value which defaults to false. Setting it to true ignores all of the following characters `àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ`.
+
+```js
+js-char-escape('àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ', {
+  'isScriptContext': true,
+  'excludeAccented': true
+});
+// → 'àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ'
 ```
 
 ### `js-char-escape.version`
