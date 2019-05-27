@@ -1,8 +1,11 @@
 {
   "name": "js-char-escape",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A fork of the jsec repository returns the shortest possible stringified & ASCII-safe representation of that data.",
-  "main": "./dist/jsce.js",
+  "main": "./src/jsce.js",
+  "bin": {
+    "jsce": "./dist/jsce.js"
+  },
   "author": "Kai",
   "original-author": {
     "name": "Mathias Bynens",
@@ -22,6 +25,7 @@
   },
   "files": [
     "LICENSE-MIT.txt",
+    "./src/jsce.js",
     "./dist/jsce.js"
   ],
   "scripts": {
