@@ -350,6 +350,6 @@ const jsce = (argument, options) => {
 	return result;
 };
 
-jsce.version = '1.0.3';
+jsce.version = '1.0.4';
 
 module.exports = jsce;
