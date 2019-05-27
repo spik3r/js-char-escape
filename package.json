@@ -1,11 +1,8 @@
 {
   "name": "js-char-escape",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A fork of the jsec repository returns the shortest possible stringified & ASCII-safe representation of that data.",
-  "main": "./src/jsce.js",
-  "bin": {
-    "jsce": "./dist/jsce.js"
-  },
+  "main": "jsce.js",
   "author": "Kai",
   "original-author": {
     "name": "Mathias Bynens",
@@ -25,13 +22,13 @@
   },
   "files": [
     "LICENSE-MIT.txt",
-    "./src/jsce.js",
-    "./dist/jsce.js"
+    "jsce.js"
   ],
   "scripts": {
     "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
     "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
-    "build": "babel src/jsce.js -o dist/jsce.js",
+    "build": "babel src/jsce.js -o jsce.js",
+    "dist": "npm publish",
     "test": "mocha tests"
   },
   "devDependencies": {
