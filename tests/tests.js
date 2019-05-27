@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('assert');
-const jsce = require('../jsce.js');
+const jsce = require('../src/jsce.js');
 
 describe('common usage', function() {
 	it('works correctly for common operations', function() {
