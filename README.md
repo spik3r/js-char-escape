@@ -1,6 +1,6 @@
 # js-char-escape [![Build status](https://travis-ci.com/spik3r/js-char-escape.svg?branch=master)](https://travis-ci.com/spik3r/js-char-escape) 
 
-Given some data, _js-char-escape_ returns a stringified representation of that data. js-char-escape is a fork of [jsesc](https://github.com/mathiasbynens/jsesc) with a few minor [exclude](#exclude) & [excludeAccented](#excludeAccented).
+Given some data, _js-char-escape_ returns a stringified representation of that data to help prevent [XSS](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS) Attacks in your application). js-char-escape is a fork of [jsesc](https://github.com/mathiasbynens/jsesc) with a few additions such as [exclude](#exclude) & excludeAccented.
  
 js-char-escape is similar to `JSON.stringify()` except:
 

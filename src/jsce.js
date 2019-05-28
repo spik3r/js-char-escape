@@ -52,7 +52,21 @@ const isMap = (value) => {
 const isSet = (value) => {
 	return toString.call(value) == '[object Set]';
 };
+// POLYFILL FOR IE11
+if (!String.prototype.includes) {
+	String.prototype.includes = function(search, start) {
+		'use strict';
+		if (typeof start !== 'number') {
+			start = 0;
+		}
 
+		if (start + search.length > this.length) {
+			return false;
+		} else {
+			return this.indexOf(search, start) !== -1;
+		}
+	};
+}
 /*--------------------------------------------------------------------------*/
 
 // https://mathiasbynens.be/notes/javascript-escapes#single
@@ -336,6 +350,6 @@ const jsce = (argument, options) => {
 	return result;
 };
 
-jsce.version = '1.0.0';
+jsce.version = '1.0.7';
 
 module.exports = jsce;

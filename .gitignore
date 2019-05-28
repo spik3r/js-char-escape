@@ -20,6 +20,9 @@ Thumbs.db
 yarn-error.log
 yarn.lock
 
+# Build folders
+.dist
+
 # IDE settings
 .vscode/
 .idea/
