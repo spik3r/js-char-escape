@@ -1,6 +1,6 @@
 {
   "name": "js-char-escape",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A fork of the jsec repository returns the shortest possible stringified & ASCII-safe representation of that data.",
   "main": "jsce.js",
   "author": "Kai",

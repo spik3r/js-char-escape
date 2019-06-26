@@ -369,6 +369,17 @@ js-char-escape('àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüù
 // → 'àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ'
 ```
 
+#### `onlyEscapeLessThan`
+
+The `onlyEscapeLessThan` option takes a boolean value which defaults to false. Setting it to only escaped the less than symbol `<`.
+
+```js
+js-char-escape('<script>123äöüß', {
+  'onlyEscapeLessThan': true
+});
+// → '/<script>123äöüß'
+```
+
 ### `js-char-escape.version`
 
 A string representing the semantic version number.

@@ -110,7 +110,8 @@ const jsce = (argument, options) => {
 		'__inline1__': false,
 		'__inline2__': false,
 		'exclude': '',
-		'excludeAccented': false
+		'excludeAccented': false,
+        'onlyEscapeLessThan': false
 	};
 	const json = options && options.json;
 	if (json) {
@@ -144,6 +145,11 @@ const jsce = (argument, options) => {
 	const useOctNumbers = options.numbers == 'octal';
 	const useDecNumbers = options.numbers == 'decimal';
 	const useHexNumbers = options.numbers == 'hexadecimal';
+
+    if(options.onlyEscapeLessThan) {
+        result = JSON.parse(JSON.stringify(argument).replace(/</g, '\\u003c'))
+        return result;
+    }
 
 	if (json && argument && isFunction(argument.toJSON)) {
 		argument = argument.toJSON();
@@ -350,6 +356,6 @@ const jsce = (argument, options) => {
 	return result;
 };
 
-jsce.version = '1.0.7';
+jsce.version = '1.0.8';
 
 module.exports = jsce;

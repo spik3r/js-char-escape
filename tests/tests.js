@@ -574,6 +574,13 @@ describe('common usage', function() {
 			"àáâäæãåāèéêëēėęîïíīįìôöòóœøōõûüùúūßśšçćčÿłžźżñńğ¿¡„“€",
 			'Excluding all accented characters in a string and a few additional symbols'
 		);
+        assert.equal(
+            jsce('<script>123äöüß', {
+                'onlyEscapeLessThan': true
+            }),
+            "\<script>123äöüß",
+            'Only replaceing less than symbol with'
+        );
 	});
 });
 
